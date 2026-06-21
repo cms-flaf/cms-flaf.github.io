@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FLAF — CMS Higgs-sector analyses</title>
+  <meta name="description" content="Documentation hub for FLAF, the Flexible LAW-based Analysis Framework, and the CMS Higgs-sector analyses built on it: HH→bbττ, HH→bbWW and H→μμ.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1b1f24;
+      --muted: #5b6570;
+      --card: #f7f8fa;
+      --border: #e2e6ea;
+      --accent: #0a64c2;
+      --accent-fg: #ffffff;
+      --shadow: 0 1px 2px rgba(16, 22, 26, .06), 0 8px 24px rgba(16, 22, 26, .06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0e1116;
+        --fg: #e6edf3;
+        --muted: #9aa7b2;
+        --card: #161b22;
+        --border: #283039;
+        --accent: #4d9bf0;
+        --accent-fg: #0e1116;
+        --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 940px; margin: 0 auto; padding: 4rem 1.25rem 3rem; }
+    header { margin-bottom: 2.5rem; }
+    .logo {
+      display: inline-block;
+      font-weight: 800;
+      letter-spacing: .04em;
+      font-size: 2.6rem;
+      line-height: 1;
+      margin: 0 0 .35rem;
+    }
+    .logo .dot { color: var(--accent); }
+    .tagline { color: var(--muted); font-size: 1.05rem; margin: 0 0 1.4rem; }
+    .intro { font-size: 1.08rem; max-width: 60ch; }
+    h2 {
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      margin: 2.6rem 0 1rem;
+      font-weight: 700;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    a.card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem 1.25rem;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    a.card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      border-color: var(--accent);
+    }
+    a.card .title { font-weight: 700; font-size: 1.12rem; margin: 0 0 .3rem; }
+    a.card .channel { color: var(--accent); font-weight: 700; }
+    a.card .desc { color: var(--muted); font-size: .96rem; margin: 0; }
+    a.card .go { display: inline-block; margin-top: .7rem; color: var(--accent); font-weight: 600; font-size: .9rem; }
+    .featured { border-color: var(--accent); }
+    .note {
+      margin-top: 1.4rem;
+      color: var(--muted);
+      font-size: .96rem;
+    }
+    .note a { color: var(--accent); }
+    footer {
+      margin-top: 3.5rem;
+      padding-top: 1.3rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="logo">FLAF<span class="dot">.</span></p>
+      <p class="tagline">Flexible LAW-based Analysis Framework — CMS Higgs-sector analyses</p>
+      <p class="intro">
+        FLAF is the shared software framework behind several CMS Higgs-sector analyses at CERN.
+        It turns CMS NanoAOD into analysis ntuples, histograms, plots and statistical results, with
+        a task-based pipeline managed by <a href="https://github.com/riga/law">LAW</a>. This page
+        links to the documentation for the framework and for each analysis built on it.
+      </p>
+    </header>
+
+    <h2>Framework</h2>
+    <div class="grid">
+      <a class="card featured" href="https://cms-flaf.github.io/FLAF/">
+        <p class="title">FLAF</p>
+        <p class="desc">The shared framework: installation, the full workflow, configuration,
+          storage, CI and a glossary. <strong>Start here if you are new.</strong></p>
+        <span class="go">Open docs →</span>
+      </a>
+    </div>
+
+    <h2>Analyses</h2>
+    <div class="grid">
+      <a class="card" href="https://cms-flaf.github.io/HH_bbtautau/">
+        <p class="title"><span class="channel">HH → bb̄ττ</span></p>
+        <p class="desc">Higgs-boson pair production in the bb̄ττ final state — the reference
+          analysis (SVfit, HHKinFit2, HHbtag).</p>
+        <span class="go">Open docs →</span>
+      </a>
+      <a class="card" href="https://cms-flaf.github.io/HH_bbWW/">
+        <p class="title"><span class="channel">HH → bb̄WW</span></p>
+        <p class="desc">Higgs-boson pair production in the bb̄WW final state, with DeepHME mass
+          reconstruction.</p>
+        <span class="go">Open docs →</span>
+      </a>
+      <a class="card" href="https://cms-flaf.github.io/H_mumu/">
+        <p class="title"><span class="channel">H → μμ</span></p>
+        <p class="desc">Higgs-boson decay to a muon pair — a single-Higgs analysis with the leanest
+          setup.</p>
+        <span class="go">Open docs →</span>
+      </a>
+    </div>
+
+    <p class="note">
+      New to the framework? The
+      <a href="https://cms-flaf.github.io/FLAF/getting-started/installation/">installation guide</a>
+      and <a href="https://cms-flaf.github.io/FLAF/getting-started/key-terms/">key terms</a> are the
+      best entry points.
+    </p>
+
+    <footer>
+      Source code on <a href="https://github.com/cms-flaf">github.com/cms-flaf</a> ·
+      CMS experiment, CERN.
+    </footer>
+  </div>
+</body>
+</html>
